@@ -28,6 +28,9 @@ public class Main {
         Point test = start.flipPoint();
         System.out.println(test.getX());
 
+        System.out.println("--------DEBUG------");
+        System.out.println(end.toString());
+
     }
     
 }

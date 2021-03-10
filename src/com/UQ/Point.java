@@ -3,17 +3,23 @@ package com.UQ;
 public class Point {
 
     private final float x, y;
+    String retVal;
+    boolean constructor;
 
     /* Constructor Takes no arguments */
     Point() {
         this.y = 0;
         this.x = 0;
+        this.retVal ="(0,0)";
+        constructor = true;
     }
 
     /* Constructor Takes 2 Floats */
     Point(float setX, float setY) {
         this.x = setX;
         this.y = setY;
+        this.retVal ="("+setX+","+setY+")";
+        constructor = false;
     }
 
     /*  Line createLine(Point end) which returns a Line object with 'this' as the start and
@@ -38,5 +44,18 @@ public class Point {
     /* Create new object of class point and increment X and Y with + dX, dY */
     public Point movePoint(float deltaX, float deltaY) {
         return new Point(x + deltaX, y + deltaY);
+    }
+
+    @Override
+    /* We can cache the string to be effiecient specifically if the class
+        immutable to ensure computational efficiency
+     */
+    public String toString() {
+        if(constructor) {
+            return retVal;
+            /* Can return precalculated*/
+        }else{
+            return retVal;
+        }
     }
 }
